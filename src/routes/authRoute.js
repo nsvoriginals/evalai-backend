@@ -13,11 +13,6 @@ router.post("/register", async (req, res) => {
 
         
        
-
-        if (existingUser) {
-            return res.status(400).json({ message: 'Email already in use' });
-        }
-
         
         const hashedPassword = await bcrypt.hash(password, 10);
 
